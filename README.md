@@ -16,7 +16,7 @@ Save results in a JSON file with classification and extracted attributes.
 1. Install Required Software
 Python 3.9 or higher
 
-Tesseract OCR (for image text extraction)
+2.Tesseract OCR (for image text extraction)
 
 2.** **Install Required Python Packages****
 Run the following command to install all necessary dependencies:
