@@ -1,0 +1,184 @@
+{
+  "Adjustment": [
+    "AU Transfer",
+    "Reallocation Fees",
+    "Amendment Fees",
+    "Principal Reallocation",
+    "Payment Correction",
+    "Interest Rate Adjustment",
+    "Tax Adjustment",
+    "Overpayment Refund"
+  ],
+  "Closing Notice": [
+    "Reallocation Principal",
+    "Cashless Roll",
+    "Loan Maturity",
+    "Account Closure",
+    "Prepayment Notice",
+    "Redemption Notice",
+    "Line of Credit Closure",
+    "Facility Termination",
+    "Security Release"
+  ],
+  "Commitment Change": [
+    "Decrease",
+    "Increase",
+    "Interest Rate Change",
+    "Maturity Date Extension",
+    "Facility Type Change",
+    "Collateral Adjustment",
+    "Renewal/Amendment Request",
+    "Loan Restructuring"
+  ],
+  "Fee Payment": [
+    "Ongoing Fee",
+    "Letter of Credit Fee",
+    "Principal",
+    "Interest",
+    "Processing Fee",
+    "Annual Maintenance Fee",
+    "Late Payment Fee",
+    "Documentation Fee",
+    "Prepayment Penalty",
+    "Commitment Fee"
+  ],
+  "Money Movement - Inbound": [
+    "Principal + Interest",
+    "Principal + Interest Fee",
+    "Timebound",
+    "Wire Transfer",
+    "ACH Transfer",
+    "International Remittance",
+    "Loan Repayment",
+    "Collateral Deposit",
+    "Dividend/Interest Credit",
+    "Refund Processing"
+  ],
+  "Money Movement - Outbound": [
+    "Foreign Currency",
+    "Payment to Vendor",
+    "Loan Disbursement",
+    "Redemption Payment",
+    "Dividend Payout",
+    "Wire Transfer Outbound",
+    "ACH Transfer Outbound",
+    "Escrow Payment",
+    "Interest/Principal Distribution"
+  ],
+  "Document Request": [
+    "Loan Agreement Copy",
+    "Mortgage Statement",
+    "Payment History",
+    "Tax Certificate",
+    "Account Statement",
+    "Collateral Documentation",
+    "Compliance Certificate",
+    "Amendment Documentation"
+  ],
+  "Security/Collateral": [
+    "Collateral Addition",
+    "Collateral Release",
+    "Lien Marking/Removal",
+    "Mortgage Creation",
+    "Security Substitution",
+    "Property Insurance Renewal",
+    "Pledge of Shares/Assets"
+  ],
+  "Compliance & KYC Update": [
+    "Periodic KYC Update",
+    "FATCA/CRS Declaration",
+    "Regulatory Reporting",
+    "Beneficial Owner Declaration",
+    "Compliance Audit Request",
+    "Account Holder Update"
+  ],
+  "Account Management": [
+    "Account Opening Request",
+    "Account Closure Request",
+    "Change of Authorized Signatories",
+    "Mandate Update",
+    "Contact Information Update",
+    "Signature Verification",
+    "Address Change Request",
+    "Account Freeze/Unfreeze"
+  ],
+  "Dispute Resolution": [
+    "Transaction Dispute",
+    "Unauthorized Transaction",
+    "Incorrect Charges",
+    "Chargeback Request",
+    "Compliance Violation Reporting",
+    "Refund/Reversal Request"
+  ],
+  "Limit Management": [
+    "Increase Credit Limit",
+    "Decrease Credit Limit",
+    "Temporary Limit Increase",
+    "Overdraft Facility Adjustment",
+    "Trade Finance Limit Modification",
+    "Revolving Credit Limit Change"
+  ],
+  "Loan Management": [
+    "Loan Drawdown Request",
+    "Loan Prepayment Request",
+    "Repayment Schedule Change",
+    "Loan Extension Request",
+    "Interest Rate Review",
+    "Waiver of Late Payment",
+    "Loan Status Inquiry",
+    "Loan Restructuring/Modification"
+  ],
+  "Trade Services": [
+    "Letter of Credit Issuance",
+    "Guarantee Issuance/Amendment",
+    "Bill Discounting Request",
+    "Export/Import Documentation",
+    "SWIFT Message Inquiry",
+    "Payment Confirmation Request"
+  ],
+  "Interest Rate Management": [
+    "Interest Rate Fixing",
+    "Interest Rate Swap Execution",
+    "Floating to Fixed Rate Change",
+    "Fixed to Floating Rate Change",
+    "Benchmark Rate Update",
+    "Hedging Confirmation"
+  ],
+  "Escrow Services": [
+    "Escrow Account Setup",
+    "Escrow Release Request",
+    "Escrow Deposit/Withdrawal",
+    "Amendment to Escrow Agreement",
+    "Escrow Interest Distribution"
+  ],
+  "Tax & Regulatory Reporting": [
+    "Tax Deduction Certificate",
+    "GST/TDS Certificate Request",
+    "Regulatory Reporting Submission",
+    "Tax Compliance Audit Request",
+    "Form 15CA/CB Issuance"
+  ],
+  "Treasury Services": [
+    "Forex Deal Confirmation",
+    "Hedging Request",
+    "Currency Conversion",
+    "Treasury Investment Advice",
+    "Money Market Deal Confirmation",
+    "Rate Lock Request"
+  ],
+  "Audit & Compliance": [
+    "SOX Compliance Confirmation",
+    "Internal Audit Request",
+    "Due Diligence Documentation",
+    "Compliance Reporting",
+    "AML/KYC Review"
+  ],
+  "Legal & Documentation": [
+    "Legal Notice Issuance",
+    "Drafting of Agreement",
+    "Power of Attorney Update",
+    "Legal Opinion Request",
+    "Litigation Status Inquiry",
+    "Consent for Disclosure"
+  ]
+}

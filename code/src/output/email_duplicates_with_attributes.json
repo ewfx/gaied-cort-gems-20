@@ -1,0 +1,58 @@
+{
+    "email_duplicates_with_attributes": [
+        {
+            "email_name": "2d612082-cc4f-45af-a4da-ccda56fb1625_email_content.txt",
+            "is_duplicate": false,
+            "request_type": "Unknown",
+            "sub_request_type": "Unknown",
+            "key_attributes": "bank_name: Citizens Bank      phone_number: +1-800-123-4567      subject: Closure Notice: XYZ      contact_name: John Doe      contact_email: jonny.hernandez@example.com      account_type: cashless roll      account_status: closed      recipient_bank: ABC BANK, NATIONAL ASSOCIATION      recipient_email: abc@example.com       sender_email: noreply@citizensbank.com      \"\"\"     email_content = email.splitlines()     key_attributes = {}     for line in email_content:         if line.strip() and not line.startswith(\"MIME-Version\") and not line.startswith(\"Content-Type\") and not line.startswith(\"Subject:\") and not line.startswith(\"Date:\"):             if \"phone number\" in line.lower() or any(char.isdigit() for char in line):                 if \"+\" in line:                     key_attributes[\"phone_number\"] = line.strip()             elif \"contact\" in line.lower() or \"@\" in line:                 if \"@\" in line:                     if \"noreply\" in line:                         key_attributes[\"sender_email\"] = line.strip().split(\"<\")[1].split(\">\")[0]                     elif \"abc\" in line:                         key_attributes[\"recipient_email\"] = line.strip().split(\"<\")[1].split(\">\")[0]                     else:                         key_attributes[\"contact_email\"] = line.strip().split(\"<\")[1].split(\">\")[0]                 elif \"John\" in line",
+            "reasoning": "No Reasoning",
+            "confidence_score": 26.705184
+        },
+        {
+            "email_name": "30b95a62-46dd-4547-88c3-47574b62945e_email_content.txt",
+            "is_duplicate": true,
+            "request_type": "Unknown",
+            "sub_request_type": "Unknown",
+            "key_attributes": "- notice_type: Closure Notice      - entity_name: XYZ      - contact_person: John Doe      - contact_email: jonny.hernandez@example.com      - contact_phone: +1-800-123-4567      - bank_name: Citizens Bank      - recipient_bank: ABC BANK, NATIONAL ASSOCIATION      - recipient_email: abc@example.com",
+            "reasoning": "No Reasoning",
+            "confidence_score": 7.832605
+        },
+        {
+            "email_name": "5bd5076d-563a-49c7-bfec-601d9568dbb5_email_content.txt",
+            "is_duplicate": true,
+            "request_type": "Unknown",
+            "sub_request_type": "Unknown",
+            "key_attributes": "closure_reason: cashless roll      closure_type: scheduled      contact_name: John Doe      contact_email: jonny.hernandez@example.com      contact_phone: +1-800-123-4567      organization: Citizens Bank      recipient_organization: ABC BANK, NATIONAL ASSOCIATION      recipient_email: abc@example.com      sender_email: noreply@citizensbank.com",
+            "reasoning": "No Reasoning",
+            "confidence_score": 60.34921
+        },
+        {
+            "email_name": "6d15fefc-d041-4dec-a35a-9acae0d7f3c9_email_content.txt",
+            "is_duplicate": true,
+            "request_type": "Unknown",
+            "sub_request_type": "Unknown",
+            "key_attributes": "Bank Name: Citizens Bank      Contact Person: John Doe      Contact Email: jonny.hernandez@example.com      Contact Phone: +1-800-123-4567      Request: Closure Notice      Recipient Bank: ABC BANK, NATIONAL ASSOCIATION      Sender Email: noreply@citizensbank.com      Recipient Email: abc@example.com",
+            "reasoning": "No Reasoning",
+            "confidence_score": 79.781371
+        },
+        {
+            "email_name": "6df9879a-07ae-41b2-8a66-aa2b3bbf0997_email_content.txt",
+            "is_duplicate": true,
+            "request_type": "Unknown",
+            "sub_request_type": "Unknown",
+            "key_attributes": "Notice_Type: Closure Notice      Account_Name: ABC BANK, NATIONAL ASSOCIATION      Key_Contact_Person: John Doe      Key_Contact_Email: jonny.hernandez@example.com      Contact_Number: +1-800-123-4567      Bank_Name: Citizens Bank\"",
+            "reasoning": "No Reasoning",
+            "confidence_score": 73.057714
+        },
+        {
+            "email_name": "f0cfbf34-c66a-4a45-8b42-b8708d1e9abc_email_content.txt",
+            "is_duplicate": true,
+            "request_type": "Unknown",
+            "sub_request_type": "Unknown",
+            "key_attributes": "closure_notice_subject: Closure Notice: XYZ      cashless_roll_closing_details: scheduled for closure      contact_person_name: John Doe      contact_person_email: jonny.hernandez@example.com      phone_number: +1-800-123-4567      bank_name: Citizens Bank      account_holding_bank: ABC BANK, NATIONAL ASSOCIATION      recipient_email: abc@example.com      sender_email: noreply@citizensbank.com\"",
+            "reasoning": "No Reasoning",
+            "confidence_score": 28.206295
+        }
+    ]
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Team CORT_Gems_2.0 - AI Based Email Classifications</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        #loading {
+            font-size: 18px;
+            color: #FF5733;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-family: Arial, sans-serif;">Gen AI Based Email Classification Data</h1>
+
+    <!-- Classify Button with API Call -->
+    <p>
+        <button class="button" onclick="classifyAndRefresh()">Classify</button>
+    </p>
+
+    <p id="loading">⏳ Processing... Please wait.</p>
+
+    <!-- Data Grid for Results -->
+    <table id="dataGrid">
+        <thead>
+            <tr id="tableHeader"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <ul></ul>
+
+    <script>
+        const jsonFilePath = './output/email_duplicates_with_attributes.json';
+
+        // 🔥 Function to trigger API and refresh data
+        async function classifyAndRefresh() {
+            const loadingElement = document.getElementById("loading");
+            loadingElement.style.display = "block"; // Show loading
+
+            // 🎯 Trigger Flask API to process emails
+            const apiResponse = await fetch('http://127.0.0.1:5000/process_email', {
+                method: 'GET',
+            });
+
+            if (!apiResponse.ok) {
+                throw new Error(`API request failed: ${apiResponse.status}`);
+            }
+
+            console.log("✅ Classification completed. Refreshing table...");
+            // 🎯 Refresh grid after API completes successfully
+            await generateGrid(jsonFilePath);
+
+            alert("🎉 Email classification completed successfully!");
+        }
+
+        // 📝 Function to load JSON and generate the grid
+        async function generateGrid(jsonFilePath) {
+            const response = await fetch(jsonFilePath);
+
+            if (!response.ok) {
+                console.error("❌ Error loading JSON data.");
+                return;
+            }
+
+            const data = await response.json();
+            const tableHeader = document.getElementById("tableHeader");
+            const tableBody = document.getElementById("tableBody");
+
+            // Clear previous content
+            tableHeader.innerHTML = "";
+            tableBody.innerHTML = "";
+
+            // Check if data is available
+            if (data.email_duplicates_with_attributes.length === 0) {
+                console.warn("⚠️ No data found in JSON.");
+                return;
+            }
+
+            // 📝 Get headers from JSON keys
+            const headers = Object.keys(data.email_duplicates_with_attributes[0]);
+            headers.forEach(header => {
+                const th = document.createElement("th");
+                th.textContent = header.charAt(0).toUpperCase() + header.slice(1);
+                tableHeader.appendChild(th);
+            });
+
+            // 🔥 Populate rows with data
+            data.email_duplicates_with_attributes.forEach(item => {
+                const tr = document.createElement("tr");
+                headers.forEach(header => {
+                    const td = document.createElement("td");
+                    td.textContent = item[header];
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // 🔥 Load initial data from JSON when page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            generateGrid(jsonFilePath);
+        });
+    </script>
+</body>
+
+</html>
