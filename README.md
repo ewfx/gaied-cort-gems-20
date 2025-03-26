@@ -11,6 +11,8 @@ Extract key attributes dynamically using Together AI.
 Classify emails into categories and subcategories.
 
 Save results in a JSON file with classification and extracted attributes.
+![image](https://github.com/user-attachments/assets/6c98a238-315c-4852-9f30-a20f2d786d94)
+![image](https://github.com/user-attachments/assets/e6f223d8-03bb-4d86-b8a5-817ce41448f2)
 
 📚 **Prerequisites**
 1. Install Required Software
