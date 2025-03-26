@@ -22,28 +22,18 @@ Tesseract OCR (for image text extraction)
 Run the following command to install all necessary dependencies:
 pip install -r requirements.txt
 
-📂 Project Structure
-bash
-Copy
-Edit
-/project-folder
-├── /eml_files               # Folder with all .eml email files
-├── /extract                 # Folder where extracted content and attachments will be saved
-├── /output                  # Folder to store final output JSON
-├── /categories_data.txt     # File with classification categories
-├── /requirements.txt        # Required packages
-├── .env                     # API keys and config variables
-└── app.py                   # Main Flask application
+
 ⚙️** Configuration**
 1. Environment Variables
+
 Create a .env file in the root directory and add:
-# Tesseract OCR Path
+Tesseract OCR Path
 TESSERACT_PATH=C:\Program Files\Tesseract-OCR\tesseract.exe
 
-# Together AI API Key
+Together AI API Key
 TOGETHER_AI_API_KEY=your_together_ai_api_key
 
-# Together AI API URL
+Together AI API URL
 TOGETHER_AI_URL=https://api.together.ai/completions
 Replace your_together_ai_api_key with your actual Together AI API key.
 
