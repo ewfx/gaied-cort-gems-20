@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 Gen-AI
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
