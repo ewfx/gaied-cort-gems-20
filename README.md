@@ -1,60 +1,96 @@
-# 🚀 Gen-AI
+**Gen AI Orchestrator for Email and Document Triage/Routing**
 
-## 📌 Table of Contents
-- [Introduction](#introduction)
-- [Demo](#demo)
-- [Inspiration](#inspiration)
-- [What It Does](#what-it-does)
-- [How We Built It](#how-we-built-it)
-- [Challenges We Faced](#challenges-we-faced)
-- [How to Run](#how-to-run)
-- [Tech Stack](#tech-stack)
-- [Team](#team)
+This project processes .eml email files to:
 
----
+Extract text and attachments (PDF, Word, Image).
 
-## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+Detect duplicate emails using sentence embeddings.
 
-## 🎥 Demo
-🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
-🖼️ Screenshots:
+Extract key attributes dynamically using Together AI.
 
-![Screenshot 1](link-to-image)
+Classify emails into categories and subcategories.
 
-## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+Save results in a JSON file with classification and extracted attributes.
 
-## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+📚 **Prerequisites**
+1. Install Required Software
+Python 3.9 or higher
 
-## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+Tesseract OCR (for image text extraction)
 
-## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+2.** **Install Required Python Packages****
+Run the following command to install all necessary dependencies:
+pip install -r requirements.txt
 
-## 🏃 How to Run
-1. Clone the repository  
-   ```sh
-   git clone https://github.com/your-repo.git
-   ```
-2. Install dependencies  
-   ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
-   ```
-3. Run the project  
-   ```sh
-   npm start  # or python app.py
-   ```
+📂 Project Structure
+bash
+Copy
+Edit
+/project-folder
+├── /eml_files               # Folder with all .eml email files
+├── /extract                 # Folder where extracted content and attachments will be saved
+├── /output                  # Folder to store final output JSON
+├── /categories_data.txt     # File with classification categories
+├── /requirements.txt        # Required packages
+├── .env                     # API keys and config variables
+└── app.py                   # Main Flask application
+⚙️** Configuration**
+1. Environment Variables
+Create a .env file in the root directory and add:
+# Tesseract OCR Path
+TESSERACT_PATH=C:\Program Files\Tesseract-OCR\tesseract.exe
+
+# Together AI API Key
+TOGETHER_AI_API_KEY=your_together_ai_api_key
+
+# Together AI API URL
+TOGETHER_AI_URL=https://api.together.ai/completions
+Replace your_together_ai_api_key with your actual Together AI API key.
+
+🚀 **Running the Application**
+1. Start Flask API
+Run the Flask application:
+python app.py
+The application will run at:
+http://127.0.0.1:5000/
+
+2.UI :
+Go to the code\src\EmailClassification.html and run it on live server.
+The UI looks like this : ![image](https://github.com/user-attachments/assets/f1744f7a-f9ef-41dd-b59b-93bf6875ae36)
+
+
+
+📨 Processing Emails
+1. Add EML Files
+Place .eml files into the eml_files folder.
+
+2. Trigger Email Processing
+Access the API endpoint to start email processing:
+
+http://127.0.0.1:5000/process_email
+
+
+The system will:
+
+Extract email contents and attachments.
+
+Segment emails based on date.
+
+Detect duplicates using SentenceTransformer embeddings.
+
+Extract key attributes using Llama-3.3-70B-Instruct-Turbo.
+
+Classify emails into categories and subcategories.
+
+3. View Results
+The results will be saved in:
+/output/email_duplicates_with_attributes.json and displayed in UI
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: HTML
+- 🔹 Backend: Flask Python
+- 🔹 Database: 
+- 🔹 Other: LLama Models
 
-## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+## 👥 Team : CORT_Gems_2.0
+  
